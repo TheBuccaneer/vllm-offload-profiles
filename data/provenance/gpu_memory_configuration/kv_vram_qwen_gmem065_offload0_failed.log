@@ -1,0 +1,12 @@
+# Curated GPU-memory configuration evidence excerpt
+# Source repository commit: 72b9272c59ca0738ffe7fb012b9a33169b3b941f
+# Source path: server_logs_qwen/server_qwen_offload0_20260727_162317.log
+# Original source SHA-256: ce40373571e06bd96566498bff19f13f68d33e2d66db065decf24cda5b0557cc
+# Only configuration, memory, startup, and failure lines are retained.
+
+(APIServer pid=8330) INFO 07-27 16:23:23 [utils.py:238] non-default args: {'model_tag': 'Qwen/Qwen2.5-7B-Instruct', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'max_model_len': 8192, 'gpu_memory_utilization': 0.65}
+(EngineCore_DP0 pid=8540) INFO 07-27 16:23:37 [gpu_model_runner.py:4364] Model loading took 14.25 GiB memory and 3.176798 seconds
+(EngineCore_DP0 pid=8540) INFO 07-27 16:23:40 [gpu_worker.py:424] Available KV cache memory: 0.41 GiB
+(EngineCore_DP0 pid=8540) ERROR 07-27 16:23:40 [core.py:1100] ValueError: To serve at least one request with the models's max seq len (8192), (0.44 GiB KV cache is needed, which is larger than the available KV cache memory (0.41 GiB). Based on the available memory, the estimated maximum model length is 7760. Try increasing `gpu_memory_utilization` or decreasing `max_model_len` when initializing the engine. See [documentation URL omitted] for more details.
+(EngineCore_DP0 pid=8540) ValueError: To serve at least one request with the models's max seq len (8192), (0.44 GiB KV cache is needed, which is larger than the available KV cache memory (0.41 GiB). Based on the available memory, the estimated maximum model length is 7760. Try increasing `gpu_memory_utilization` or decreasing `max_model_len` when initializing the engine. See [documentation URL omitted] for more details.
+(APIServer pid=8330) RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}

@@ -1,0 +1,11 @@
+# Curated GPU-memory configuration evidence excerpt
+# Source repository commit: 72b9272c59ca0738ffe7fb012b9a33169b3b941f
+# Source path: runs/2026-04-26_lama/server_logs/server_offload0_20260415_140204.log
+# Original source SHA-256: 9ae659f9e3f3e0f0c8a23097b002748b91ed3f409f6cd9dfb49958bbe561c694
+# Only configuration, memory, startup, and failure lines are retained.
+
+(APIServer pid=119922) INFO 04-15 14:02:10 [utils.py:238] non-default args: {'model_tag': 'meta-llama/Llama-3.1-8B-Instruct', 'model': 'meta-llama/Llama-3.1-8B-Instruct', 'max_model_len': 8192}
+(EngineCore_DP0 pid=120146) INFO 04-15 14:02:24 [gpu_model_runner.py:4364] Model loading took 14.99 GiB memory and 3.489510 seconds
+(EngineCore_DP0 pid=120146) INFO 04-15 14:02:29 [gpu_worker.py:424] Available KV cache memory: 5.68 GiB
+(EngineCore_DP0 pid=120146) INFO 04-15 14:02:29 [kv_cache_utils.py:1314] GPU KV cache size: 46,544 tokens
+(APIServer pid=119922) INFO:     Application startup complete.

@@ -1,0 +1,12 @@
+# Curated GPU-memory configuration evidence excerpt
+# Source repository commit: 72b9272c59ca0738ffe7fb012b9a33169b3b941f
+# Source path: server_logs_qwen/server_qwen_offload0_20260727_162116.log
+# Original source SHA-256: aed1f1d1a54c520a8f5a000cf87ca6de6677e1d780cd0f1c9f70635dd8bbef07
+# Only configuration, memory, startup, and failure lines are retained.
+
+(APIServer pid=7744) INFO 07-27 16:21:23 [utils.py:238] non-default args: {'model_tag': 'Qwen/Qwen2.5-7B-Instruct', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'max_model_len': 8192, 'gpu_memory_utilization': 0.6}
+(EngineCore_DP0 pid=7954) INFO 07-27 16:21:36 [gpu_model_runner.py:4364] Model loading took 14.25 GiB memory and 3.062840 seconds
+(EngineCore_DP0 pid=7954) INFO 07-27 16:21:40 [gpu_worker.py:424] Available KV cache memory: -0.7 GiB
+(EngineCore_DP0 pid=7954) ERROR 07-27 16:21:40 [core.py:1100] ValueError: No available memory for the cache blocks. Try increasing `gpu_memory_utilization` when initializing the engine. See [documentation URL omitted] for more details.
+(EngineCore_DP0 pid=7954) ValueError: No available memory for the cache blocks. Try increasing `gpu_memory_utilization` when initializing the engine. See [documentation URL omitted] for more details.
+(APIServer pid=7744) RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}

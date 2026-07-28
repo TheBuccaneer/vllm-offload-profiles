@@ -86,6 +86,24 @@ Artifacts:
 - reports: `results/reports/kv_vram_control_*`
 - checksums: `data/provenance/kv_vram_control_sha256.txt`
 
+## 5. GPU-memory configuration provenance
+
+Scope:
+
+- documents the campaign-specific `gpu-memory-utilization` settings,
+- records the matched-comparison rule across campaign blocks,
+- retains curated successful and failed server-start evidence,
+- documents the Llama and Qwen GPU model-loading memory values,
+- distinguishes model-specific near-boundary settings from equal-pressure claims.
+
+Artifacts:
+
+- evidence excerpts: `data/provenance/gpu_memory_configuration/`
+- historical source mapping: `data/provenance/gpu_memory_configuration/source_map.tsv`
+- checksums: `data/provenance/gpu_memory_configuration_sha256.txt`
+- validation: `analysis/validation/validate_gpu_memory_configuration_provenance.py`
+- report: `results/reports/gpu_memory_configuration_provenance.md`
+
 ## Shared analysis pipeline
 
 - shared loading and fitting: `analysis/common/figure_common.py`

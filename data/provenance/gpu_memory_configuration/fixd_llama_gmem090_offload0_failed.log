@@ -1,0 +1,15 @@
+# Curated GPU-memory configuration evidence excerpt
+# Source repository commit: 72b9272c59ca0738ffe7fb012b9a33169b3b941f
+# Source path: server_logs/server_offload0_20260726_102339.log
+# Original source SHA-256: 583c5eca6a574e0145f7012491d3dcdd8cba62c16b196ce21b54d618e1084bda
+# Only configuration, memory, startup, and failure lines are retained.
+
+(APIServer pid=44025) INFO 07-26 10:23:47 [utils.py:238] non-default args: {'model_tag': 'meta-llama/Llama-3.1-8B-Instruct', 'model': 'meta-llama/Llama-3.1-8B-Instruct', 'max_model_len': 8192}
+(EngineCore_DP0 pid=44265) INFO 07-26 10:24:16 [gpu_model_runner.py:4364] Model loading took 14.99 GiB memory and 18.543273 seconds
+(EngineCore_DP0 pid=44265) INFO 07-26 10:24:21 [gpu_worker.py:424] Available KV cache memory: 5.61 GiB
+(EngineCore_DP0 pid=44265) INFO 07-26 10:24:21 [kv_cache_utils.py:1314] GPU KV cache size: 45,968 tokens
+(EngineCore_DP0 pid=44265) ERROR 07-26 10:24:28 [core.py:1100] torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 126.00 MiB. GPU 0 has a total capacity of 23.54 GiB of which 139.75 MiB is free. Process 4257 has 83.54 MiB memory in use. Process 11017 has 133.29 MiB memory in use. Including non-PyTorch memory, this process has 21.72 GiB memory in use. Of the allocated memory 20.96 GiB is allocated by PyTorch, with 84.00 MiB allocated in private pools (e.g., CUDA Graphs), and 45.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ([documentation URL omitted]
+(EngineCore_DP0 pid=44265) ERROR 07-26 10:24:28 [core.py:1100] RuntimeError: CUDA out of memory occurred when warming up sampler with 256 dummy requests. Please try lowering `max_num_seqs` or `gpu_memory_utilization` when initializing the engine.
+(EngineCore_DP0 pid=44265) torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 126.00 MiB. GPU 0 has a total capacity of 23.54 GiB of which 139.75 MiB is free. Process 4257 has 83.54 MiB memory in use. Process 11017 has 133.29 MiB memory in use. Including non-PyTorch memory, this process has 21.72 GiB memory in use. Of the allocated memory 20.96 GiB is allocated by PyTorch, with 84.00 MiB allocated in private pools (e.g., CUDA Graphs), and 45.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ([documentation URL omitted]
+(EngineCore_DP0 pid=44265) RuntimeError: CUDA out of memory occurred when warming up sampler with 256 dummy requests. Please try lowering `max_num_seqs` or `gpu_memory_utilization` when initializing the engine.
+(APIServer pid=44025) RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}

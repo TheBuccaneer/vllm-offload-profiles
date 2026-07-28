@@ -35,7 +35,7 @@ The artifact covers four measurement blocks:
 - `analysis/`: extraction, validation, fitting, and plotting
 - `data/raw/`: canonical raw measurements
 - `data/derived/`: reproducibly generated datasets
-- `data/provenance/`: SHA-256 manifests
+- `data/provenance/`: SHA-256 manifests and retained configuration evidence
 - `results/figures/`: generated figures
 - `results/tables/`: generated tables and analysis datasets
 - `results/reports/`: validation and analysis reports
@@ -61,13 +61,14 @@ Run the complete pipeline from the repository root:
 The pipeline:
 
 1. verifies the raw-data SHA-256 manifests,
-2. extracts the baseline and robustness datasets,
-3. validates all four measurement campaigns,
-4. runs the separability and robustness analyses,
-5. analyzes the GPU-load and KV/VRAM controls,
-6. fits the reported TPOT models,
-7. regenerates the paper figures and tables,
-8. verifies the required outputs.
+2. validates the retained GPU-memory configuration evidence,
+3. extracts the baseline and robustness datasets,
+4. validates all four measurement campaigns,
+5. runs the separability and robustness analyses,
+6. analyzes the GPU-load and KV/VRAM controls,
+7. fits the reported TPOT models,
+8. regenerates the paper figures and tables,
+9. verifies the required outputs.
 
 A successful execution ends with:
 
@@ -89,6 +90,10 @@ Tables:
 - `results/tables/paper/table_control_ratios.csv`
 - `results/tables/paper/table_control_ratios.tex`
 
+Supporting configuration-provenance report:
+
+- `results/reports/gpu_memory_configuration_provenance.md`
+
 Paper-output provenance JSON files record the input checksums and the
 Git revision of the analysis code used to generate the outputs.
 
@@ -98,6 +103,10 @@ Git revision of the analysis code used to generate the outputs.
 Verify all canonical raw inputs independently with:
 
     bash analysis/verify_checksums.sh
+
+Verify the retained GPU-memory configuration evidence and report with:
+
+    python3 analysis/validation/validate_gpu_memory_configuration_provenance.py
 
 Files beneath `data/raw/` are treated as immutable inputs. Generated
 datasets and results are written beneath `data/derived/` and `results/`.

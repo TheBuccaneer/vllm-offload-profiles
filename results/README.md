@@ -8,6 +8,11 @@ datasets, figures, and publication tables.
 `reports/` contains human-readable and machine-readable validation and
 analysis reports for all four measurement campaigns.
 
+The rationale and retained evidence for the campaign-specific GPU-memory
+settings are documented in:
+
+    results/reports/gpu_memory_configuration_provenance.md
+
 ## Tables
 
 `tables/` contains:

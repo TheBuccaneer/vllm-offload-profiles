@@ -27,11 +27,14 @@ mkdir -p \
   results/figures/gpu_load_control \
   results/tables/kv_vram_control
 
-echo "[1/10] Verify raw-data checksums"
+echo "[1/11] Verify raw-data checksums"
 bash analysis/verify_checksums.sh "$REPO_ROOT"
 
+echo "[2/11] Validate GPU-memory configuration provenance"
+"$PYTHON" analysis/validation/validate_gpu_memory_configuration_provenance.py
+
 echo
-echo "[2/10] Extract baseline datasets"
+echo "[3/11] Extract baseline datasets"
 "$PYTHON" analysis/extraction/extract_baseline.py \
   data/raw/baseline/llama \
   --outdir data/derived/baseline/llama
@@ -41,14 +44,14 @@ echo "[2/10] Extract baseline datasets"
   --outdir data/derived/baseline/qwen
 
 echo
-echo "[3/10] Validate baseline campaign"
+echo "[4/11] Validate baseline campaign"
 "$PYTHON" analysis/validation/validate_baseline.py \
   data/raw/baseline \
   --derived-root data/derived/baseline \
   --output results/reports/baseline_validation.txt
 
 echo
-echo "[4/10] Validate and extract profile-robustness campaign"
+echo "[5/11] Validate and extract profile-robustness campaign"
 "$PYTHON" analysis/validation/validate_profile_robustness.py \
   data/raw/profile_robustness \
   --runs 3 \
@@ -60,7 +63,7 @@ echo "[4/10] Validate and extract profile-robustness campaign"
   --outdir data/derived/profile_robustness
 
 echo
-echo "[5/10] Analyze profile robustness"
+echo "[6/11] Analyze profile robustness"
 "$PYTHON" analysis/separability/profile_robustness.py \
   data/derived/profile_robustness/runs_summary.csv \
   --output-dir "$PROFILE_TMP" \
@@ -94,7 +97,7 @@ do
 done
 
 echo
-echo "[6/10] Run baseline separability analyses"
+echo "[7/11] Run baseline separability analyses"
 "$PYTHON" analysis/separability/baseline_loco.py \
   data/derived/baseline/llama/runs_summary.csv \
   --mode binary \
@@ -124,7 +127,7 @@ echo "[6/10] Run baseline separability analyses"
   | tee results/reports/llama_multiclass_loco_c2plus.txt
 
 echo
-echo "[7/10] Validate and analyze generic GPU-load control"
+echo "[8/11] Validate and analyze generic GPU-load control"
 "$PYTHON" experiments/gpu_load_control/validate_fixd.py \
   data/raw/gpu_load_control \
   --runs 3 \
@@ -165,7 +168,7 @@ do
 done
 
 echo
-echo "[8/10] Validate and analyze KV/VRAM control"
+echo "[9/11] Validate and analyze KV/VRAM control"
 "$PYTHON" experiments/kv_vram_control/validate.py \
   data/raw/kv_vram_control \
   --output results/reports/kv_vram_control_validation.csv \
@@ -178,7 +181,7 @@ echo "[8/10] Validate and analyze KV/VRAM control"
   | tee results/reports/kv_vram_control_analysis.txt
 
 echo
-echo "[9/10] Generate paper figures and tables"
+echo "[10/11] Generate paper figures and tables"
 rm -rf \
   results/figures/paper \
   results/tables/paper
@@ -186,12 +189,13 @@ rm -rf \
 bash analysis/run_all_figures.sh "$REPO_ROOT"
 
 echo
-echo "[10/10] Verify key outputs"
+echo "[11/11] Verify key outputs"
 EXPECTED=(
   results/reports/baseline_validation.txt
   results/reports/profile_robustness_validation.csv
   results/reports/gpu_load_control_validation.csv
   results/reports/kv_vram_control_validation.csv
+  results/reports/gpu_memory_configuration_provenance.md
   results/tables/separability/llama_binary_loco_c2plus.csv
   results/tables/separability/qwen_binary_loco_c2plus.csv
   results/tables/paper/table_fit_parameters.csv

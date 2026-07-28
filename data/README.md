@@ -35,9 +35,19 @@ block:
 - `gpu_load_control_sha256.txt`
 - `kv_vram_control_sha256.txt`
 
-Verify all canonical inputs with:
+Additional retained configuration evidence is stored in:
+
+- `gpu_memory_configuration/`: curated server-log excerpts
+- `gpu_memory_configuration/source_map.tsv`: historical source mapping
+- `gpu_memory_configuration_sha256.txt`: excerpt checksums
+
+Verify all canonical raw inputs with:
 
     bash analysis/verify_checksums.sh
+
+Verify the retained GPU-memory configuration evidence with:
+
+    python3 analysis/validation/validate_gpu_memory_configuration_provenance.py
 
 ## License
 

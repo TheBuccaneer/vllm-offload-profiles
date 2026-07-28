@@ -12,13 +12,14 @@ Run the complete analysis from the repository root:
 The pipeline:
 
 1. verifies the raw-data SHA-256 manifests,
-2. extracts the baseline and profile-robustness datasets,
-3. validates all four measurement campaigns,
-4. runs the separability and robustness analyses,
-5. analyzes the GPU-load and KV/VRAM controls,
-6. fits the reported offload models,
-7. regenerates the paper figures and tables,
-8. verifies that the required outputs exist.
+2. validates the retained GPU-memory configuration evidence,
+3. extracts the baseline and profile-robustness datasets,
+4. validates all four measurement campaigns,
+5. runs the separability and robustness analyses,
+6. analyzes the GPU-load and KV/VRAM controls,
+7. fits the reported offload models,
+8. regenerates the paper figures and tables,
+9. verifies that the required outputs exist.
 
 ## Directory structure
 
@@ -42,6 +43,10 @@ Paper figures and tables only:
 Verify canonical raw inputs:
 
     bash analysis/verify_checksums.sh
+
+Validate the retained GPU-memory configuration provenance:
+
+    python3 analysis/validation/validate_gpu_memory_configuration_provenance.py
 
 ## Generated outputs
 

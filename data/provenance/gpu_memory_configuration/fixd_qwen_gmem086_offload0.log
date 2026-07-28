@@ -1,0 +1,11 @@
+# Curated GPU-memory configuration evidence excerpt
+# Source repository commit: 72b9272c59ca0738ffe7fb012b9a33169b3b941f
+# Source path: server_logs_qwen/server_qwen_offload0_20260726_125416.log
+# Original source SHA-256: 8e7d6c9019178ba8aa3b049b4af7627ed51d2e05e9da771984e4d4153b509511
+# Only configuration, memory, startup, and failure lines are retained.
+
+(APIServer pid=83995) INFO 07-26 12:54:22 [utils.py:238] non-default args: {'model_tag': 'Qwen/Qwen2.5-7B-Instruct', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'max_model_len': 8192, 'gpu_memory_utilization': 0.86}
+(EngineCore_DP0 pid=84225) INFO 07-26 12:54:50 [gpu_model_runner.py:4364] Model loading took 14.25 GiB memory and 17.282437 seconds
+(EngineCore_DP0 pid=84225) INFO 07-26 12:54:54 [gpu_worker.py:424] Available KV cache memory: 5.35 GiB
+(EngineCore_DP0 pid=84225) INFO 07-26 12:54:54 [kv_cache_utils.py:1314] GPU KV cache size: 100,256 tokens
+(APIServer pid=83995) INFO:     Application startup complete.
