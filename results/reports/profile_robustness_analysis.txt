@@ -1,0 +1,4 @@
+Filtered runs: 72
+Models: ['llama', 'qwen']
+Profiles: ['128/32', '256/64', '512/128']
+Output: results/profile_robustness
