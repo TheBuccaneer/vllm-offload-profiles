@@ -1,8 +1,4 @@
 {
-  "concurrencies": [
-    4,
-    8
-  ],
   "git_commit": "2fbfd004a1f792a8d874ddf34d1bd04299e2b52e",
   "inputs": [
     {
@@ -14,9 +10,6 @@
       "sha256": "a8f3af467292f03fb9b8bceb48b223ce4795ae5adb7f97d1bbf64a324dd2830b"
     }
   ],
-  "models": [
-    "llama",
-    "qwen"
-  ],
+  "log_y": false,
   "repo_root": "."
 }
