@@ -1,17 +1,47 @@
 # Data
 
-## raw
+This directory separates canonical measurement inputs from
+reproducibly generated analysis datasets.
 
-Canonical measurement outputs used by the study.
+## Raw data
 
-## derived
+`raw/` contains the original measurement outputs for the four
+evaluated campaigns:
 
-Request-level, run-level, and cell-level datasets generated from the
-raw measurements.
+- `baseline/`
+- `profile_robustness/`
+- `gpu_load_control/`
+- `kv_vram_control/`
 
-## provenance
+These files are treated as immutable inputs. Historical identifiers
+inside original records are retained where required for provenance.
 
-Configuration records, checksums, source mappings, and documentation
-of campaign-specific decisions.
+## Derived data
 
-Raw and derived data must remain clearly separated.
+`derived/` contains run-level and request-level CSV datasets generated
+from the raw measurements.
+
+The derived datasets can be regenerated from the repository root with:
+
+    bash analysis/run_all_analysis.sh
+
+## Provenance
+
+`provenance/` contains SHA-256 manifests for every canonical raw-data
+block:
+
+- `baseline_sha256.txt`
+- `profile_robustness_sha256.txt`
+- `gpu_load_control_sha256.txt`
+- `kv_vram_control_sha256.txt`
+
+Verify all canonical inputs with:
+
+    bash analysis/verify_checksums.sh
+
+## License
+
+The measurement data in this directory are licensed under the Creative
+Commons Attribution 4.0 International License. See `../LICENSE-DATA`.
+
+Third-party model weights and software are not included in this license.

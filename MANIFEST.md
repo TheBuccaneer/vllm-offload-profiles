@@ -1,7 +1,7 @@
 # Artifact Manifest
 
-This manifest maps each evaluated measurement campaign to its
-canonical raw data, analysis code, and generated outputs.
+This manifest maps each evaluated campaign to its canonical raw data,
+analysis code, and generated outputs.
 
 ## 1. Baseline CPU-offload sweep
 
@@ -48,7 +48,7 @@ Artifacts:
 - reports: `results/reports/profile_robustness_*`
 - checksums: `data/provenance/profile_robustness_sha256.txt`
 
-## 3. Generic GPU-only load control
+## 3. Generic GPU-only background-load control
 
 Design:
 
@@ -61,8 +61,7 @@ Design:
 Artifacts:
 
 - raw data: `data/raw/gpu_load_control/`
-- runners, validation, and analysis:
-  `experiments/gpu_load_control/`
+- runners and analysis: `experiments/gpu_load_control/`
 - figures: `results/figures/gpu_load_control/`
 - tables: `results/tables/gpu_load_control/`
 - reports: `results/reports/gpu_load_control_*`
@@ -82,24 +81,20 @@ Design:
 Artifacts:
 
 - raw data: `data/raw/kv_vram_control/`
-- runners, validation, and analysis:
-  `experiments/kv_vram_control/`
-- summary table:
-  `results/tables/kv_vram_control/kv_vram_control_summary.csv`
+- runners and analysis: `experiments/kv_vram_control/`
+- summary: `results/tables/kv_vram_control/kv_vram_control_summary.csv`
 - reports: `results/reports/kv_vram_control_*`
 - checksums: `data/provenance/kv_vram_control_sha256.txt`
 
 ## Shared analysis pipeline
 
-- strict evidence loading and fitting:
-  `analysis/common/figure_common.py`
+- shared loading and fitting: `analysis/common/figure_common.py`
 - paper figures: `analysis/figures/`
 - paper tables: `analysis/tables/`
 - figure entry point: `analysis/run_all_figures.sh`
 - complete entry point: `analysis/run_all_analysis.sh`
 - checksum verification: `analysis/verify_checksums.sh`
-- analysis dependencies:
-  `environment/requirements-analysis.txt`
+- dependencies: `environment/requirements-analysis.txt`
 
 Publication-ready outputs:
 
@@ -108,6 +103,6 @@ Publication-ready outputs:
 
 ## Excluded material
 
-The artifact excludes superseded experiments, unrelated project
-branches, temporary archives, duplicated outputs, obsolete
-intermediate results, and planning documents.
+The artifact excludes superseded experiments, unrelated branches,
+temporary archives, duplicated outputs, obsolete intermediate results,
+and planning documents.

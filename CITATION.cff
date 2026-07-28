@@ -6,4 +6,13 @@ authors:
   - family-names: "Bicanic"
     given-names: "Tihomir Thomas"
     orcid: "https://orcid.org/0009-0003-1562-3497"
+abstract: >-
+  Experimental artifact for a phase-aware measurement study of CPU
+  model-parameter offloading in vLLM serving.
 repository-code: "https://github.com/TheBuccaneer/vllm-offload-profiles"
+keywords:
+  - vLLM
+  - large language model serving
+  - CPU offloading
+  - performance measurement
+  - heterogeneous memory
