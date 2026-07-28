@@ -1,0 +1,3 @@
+Main runs analyzed: 36
+Models: ['llama', 'qwen']
+Output: results/gpu_load_control

@@ -1,0 +1,17 @@
+{
+  "label": "c64i256o256_probeconc8_main_run3",
+  "model_alias": "qwen",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "bg_concurrency": 64,
+  "bg_input_len": 256,
+  "bg_output_len": 256,
+  "pid": 99319,
+  "requested_duration_seconds": 200,
+  "actual_duration_seconds": 42,
+  "start_time_utc": "2026-07-26T11:08:57Z",
+  "end_time_utc": "2026-07-26T11:09:39Z",
+  "iterations": 3,
+  "total_completed": 120,
+  "total_failed": 0,
+  "exit_status": "stopped_by_signal"
+}

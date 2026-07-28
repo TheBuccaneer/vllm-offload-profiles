@@ -1,0 +1,13 @@
+model,concurrency,held_out_repeat,balanced_accuracy,n_test,note
+llama,4,1,1.0,2,supplement only; not the primary Fix D argument
+llama,4,2,1.0,2,supplement only; not the primary Fix D argument
+llama,4,3,1.0,2,supplement only; not the primary Fix D argument
+llama,8,1,1.0,2,supplement only; not the primary Fix D argument
+llama,8,2,1.0,2,supplement only; not the primary Fix D argument
+llama,8,3,1.0,2,supplement only; not the primary Fix D argument
+qwen,4,1,1.0,2,supplement only; not the primary Fix D argument
+qwen,4,2,1.0,2,supplement only; not the primary Fix D argument
+qwen,4,3,1.0,2,supplement only; not the primary Fix D argument
+qwen,8,1,1.0,2,supplement only; not the primary Fix D argument
+qwen,8,2,1.0,2,supplement only; not the primary Fix D argument
+qwen,8,3,1.0,2,supplement only; not the primary Fix D argument

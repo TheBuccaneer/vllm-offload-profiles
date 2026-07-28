@@ -1,0 +1,45 @@
+{
+  "model": "qwen",
+  "generated_by": "select_fixd_load.py",
+  "match_tolerance_ratio": 0.2,
+  "per_concurrency": [
+    {
+      "probe_concurrency": 4,
+      "match_status": "not_reached_max_loaded",
+      "reason": "No bg level reached within 20% of target 1481.86ms (closest: c32i256o256 at 21.24ms). Selected max-loaded level c32i256o256 (21.24ms) as control.",
+      "target_offload12_median_itl_ms": 1481.8563309981982,
+      "selected_bg_label": "c32i256o256",
+      "selected_bg_concurrency": 32,
+      "selected_bg_input_len": 256,
+      "selected_bg_output_len": 256,
+      "selected_condition_name": "gpu_only_loaded",
+      "selected_gpu_loaded_median_itl_ms": 21.237652499621618,
+      "ratio_to_target": 0.014331789158882663,
+      "candidate_levels": {
+        "c16i256o256": 19.569532998502837,
+        "c32i256o256": 21.237652499621618,
+        "c64i256o256": 19.850523001878173,
+        "c8i256o256": 20.50741399943945
+      }
+    },
+    {
+      "probe_concurrency": 8,
+      "match_status": "not_reached_max_loaded",
+      "reason": "No bg level reached within 20% of target 1485.92ms (closest: c64i256o256 at 22.58ms). Selected max-loaded level c64i256o256 (22.58ms) as control.",
+      "target_offload12_median_itl_ms": 1485.915916500744,
+      "selected_bg_label": "c64i256o256",
+      "selected_bg_concurrency": 64,
+      "selected_bg_input_len": 256,
+      "selected_bg_output_len": 256,
+      "selected_condition_name": "gpu_only_loaded",
+      "selected_gpu_loaded_median_itl_ms": 22.57574199938972,
+      "ratio_to_target": 0.015193149052844414,
+      "candidate_levels": {
+        "c16i256o256": 19.940261001465842,
+        "c32i256o256": 20.243276501787477,
+        "c64i256o256": 22.57574199938972,
+        "c8i256o256": 20.81431400074507
+      }
+    }
+  ]
+}

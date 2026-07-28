@@ -1,0 +1,17 @@
+{
+  "label": "c8i256o256_probeconc4_run1",
+  "model_alias": "llama",
+  "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+  "bg_concurrency": 8,
+  "bg_input_len": 256,
+  "bg_output_len": 256,
+  "pid": 63116,
+  "requested_duration_seconds": 200,
+  "actual_duration_seconds": 39,
+  "start_time_utc": "2026-07-26T10:14:35Z",
+  "end_time_utc": "2026-07-26T10:15:14Z",
+  "iterations": 1,
+  "total_completed": 40,
+  "total_failed": 0,
+  "exit_status": "stopped_by_signal"
+}
