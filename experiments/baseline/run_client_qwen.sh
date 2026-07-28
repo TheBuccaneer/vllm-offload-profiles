@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nutzung:
-#   OFFLOAD_GB=8 bash run_client_matrix_qwen.sh
+#   OFFLOAD_GB=8 bash run_client_qwen.sh
 #
 # Voraussetzung:
 # - vLLM-Server läuft bereits auf http://127.0.0.1:8000
@@ -14,7 +14,7 @@ BASE_URL="http://127.0.0.1:8000"
 ENDPOINT="/v1/chat/completions"
 API_KEY="pilotkey"
 
-EXPERIMENT_ID="offload_paper1_qwen_fullrep"
+EXPERIMENT_ID="offload_baseline_qwen"
 OFFLOAD_GB="${OFFLOAD_GB:?Bitte OFFLOAD_GB setzen, z.B. OFFLOAD_GB=8}"
 SERVER_LABEL="qwen25_7b_offload${OFFLOAD_GB}"
 

@@ -13,7 +13,7 @@ Neues Dateinamensschema:
   z.B. offload0_conc1_run1.json, offload8_conc16_run5.json
 
 Ordnernamen-Beispiel (offload_gb wird aus beiden Quellen abgeleitet):
-  bench_runs_offload_paper1_rerun_offload8_20260320_093921/
+  bench_runs_offload_baseline_llama_offload8_20260320_093921/
 
 Verwendung:
   python extract_baseline.py /pfad/zur/wurzel

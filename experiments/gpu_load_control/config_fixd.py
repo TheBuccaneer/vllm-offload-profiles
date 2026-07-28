@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Central constants and small path/filename helpers for Fix D (step1d_load_control).
+"""Central constants and small path/filename helpers for generic GPU load control.
 
 This module is the single documented source of truth for the numeric/naming
-conventions used across the Fix D scripts. The bash scripts in this package
+conventions used across the generic GPU load control scripts. The bash scripts in this package
 duplicate the small subset of these constants they need (same style as the
 existing run_server.sh / run_client_profile_robustness.sh scripts) — if you
 change something here, update the matching constants at the top of the bash
@@ -50,7 +50,7 @@ CALIBRATION_REPEATS_DEFAULT = 1
 
 # Seconds the background load must run before a probe starts, and the
 # minimum it must keep running for after the probe ends, before it may be
-# stopped. Kept inside the 10-30s band required by the Fix D delta update.
+# stopped. Kept inside the 10-30s band required by the generic GPU load control delta update.
 BG_WARMUP_SECONDS = 15
 BG_COOLDOWN_SECONDS = 5
 

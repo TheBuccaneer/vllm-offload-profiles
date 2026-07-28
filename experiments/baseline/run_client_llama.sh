@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nutzung:
-#   OFFLOAD_GB=8 bash run_client_matrix.sh
+#   OFFLOAD_GB=8 bash run_client_llama.sh
 #
 # Voraussetzung:
 # - vLLM-Server läuft bereits auf http://127.0.0.1:8000
@@ -14,7 +14,7 @@ BASE_URL="http://127.0.0.1:8000"
 ENDPOINT="/v1/chat/completions"
 API_KEY="pilotkey"
 
-EXPERIMENT_ID="offload_paper1_rerun"
+EXPERIMENT_ID="offload_baseline_llama"
 OFFLOAD_GB="${OFFLOAD_GB:?Bitte OFFLOAD_GB setzen, z.B. OFFLOAD_GB=8}"
 SERVER_LABEL="llama31_8b_offload${OFFLOAD_GB}"
 

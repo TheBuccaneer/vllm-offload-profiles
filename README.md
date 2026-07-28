@@ -56,7 +56,7 @@ files have been imported and independently validated.
 Only files used by the final study are included.
 
 Exploratory experiments, superseded scripts, temporary archives,
-internal handover documents, and unrelated project material are
+temporary working notes, and unrelated project material are
 intentionally excluded.
 
 ## Citation
