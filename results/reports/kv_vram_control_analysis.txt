@@ -1,0 +1,7 @@
+model  concurrency  gpu_memory_utilization  kv_vram_median_itl_ms  kv_vram_median_ttft_ms  itl_ratio_kv_vram_over_normal  ttft_ratio_kv_vram_over_normal  itl_percent_of_offload12
+llama            4                    0.75              21.219194              292.819136                       1.031941                        4.639937                  1.524907
+llama            8                    0.75              22.723700              494.474394                       1.082181                        7.542592                  1.623874
+ qwen            4                    0.65              20.139961              279.836666                       1.032066                        4.637211                  1.359103
+ qwen            8                    0.65              20.644304              455.417700                       1.037583                        6.373841                  1.389332
+
+Output: results/tables/kv_vram_control/kv_vram_control_summary.csv

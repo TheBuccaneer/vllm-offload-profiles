@@ -101,7 +101,7 @@ NUM_PROMPTS="20"
 NUM_WARMUPS="1"
 TEMPERATURE="0"
 ENDPOINT="/v1/chat/completions"
-CAMPAIGN_VERSION="gpu_load_control_v1"
+CAMPAIGN_VERSION="${CAMPAIGN_VERSION:-gpu_load_control_v1}"
 
 case "$CONDITION" in
   gpu_only_normal|gpu_only_loaded) OFFLOAD_GB_EXPECTED=0 ;;

@@ -1,0 +1,4 @@
+Matched probe JSONs: 12 (expected 12)
+Matched background summaries: 12 (expected 12)
+Errors: 0; warnings: 0
+Report: results/reports/kv_vram_control_validation.csv
