@@ -1,0 +1,250 @@
+
+=================================================================
+  SETUP
+=================================================================
+
+  Modus:            binary
+  Features:         ['median_tpot_ms', 'median_itl_ms', 'median_ttft_ms']
+  Concurrency-Werte: [np.int64(2), np.int64(4), np.int64(8), np.int64(12), np.int64(16)]
+  Samples gesamt:   150
+
+  Klassenverteilung:
+    offload=0: 25
+    offload>0: 125
+
+=================================================================
+  FOLD: Test auf run_concurrency = 2
+=================================================================
+
+  Train-Samples: 120   Test-Samples: 30
+
+  --- Logistic Regression ---
+  Accuracy:          1.0000
+  Balanced Accuracy: 1.0000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            0           25
+
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000         5
+           1     1.0000    1.0000    1.0000        25
+
+    accuracy                         1.0000        30
+   macro avg     1.0000    1.0000    1.0000        30
+weighted avg     1.0000    1.0000    1.0000        30
+
+
+  --- Nearest-Centroid ---
+  Accuracy:          0.6667
+  Balanced Accuracy: 0.8000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0           10           15
+
+              precision    recall  f1-score   support
+
+           0     0.3333    1.0000    0.5000         5
+           1     1.0000    0.6000    0.7500        25
+
+    accuracy                         0.6667        30
+   macro avg     0.6667    0.8000    0.6250        30
+weighted avg     0.8889    0.6667    0.7083        30
+
+
+=================================================================
+  FOLD: Test auf run_concurrency = 4
+=================================================================
+
+  Train-Samples: 120   Test-Samples: 30
+
+  --- Logistic Regression ---
+  Accuracy:          1.0000
+  Balanced Accuracy: 1.0000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            0           25
+
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000         5
+           1     1.0000    1.0000    1.0000        25
+
+    accuracy                         1.0000        30
+   macro avg     1.0000    1.0000    1.0000        30
+weighted avg     1.0000    1.0000    1.0000        30
+
+
+  --- Nearest-Centroid ---
+  Accuracy:          0.6333
+  Balanced Accuracy: 0.7800
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0           11           14
+
+              precision    recall  f1-score   support
+
+           0     0.3125    1.0000    0.4762         5
+           1     1.0000    0.5600    0.7179        25
+
+    accuracy                         0.6333        30
+   macro avg     0.6562    0.7800    0.5971        30
+weighted avg     0.8854    0.6333    0.6777        30
+
+
+=================================================================
+  FOLD: Test auf run_concurrency = 8
+=================================================================
+
+  Train-Samples: 120   Test-Samples: 30
+
+  --- Logistic Regression ---
+  Accuracy:          1.0000
+  Balanced Accuracy: 1.0000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            0           25
+
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000         5
+           1     1.0000    1.0000    1.0000        25
+
+    accuracy                         1.0000        30
+   macro avg     1.0000    1.0000    1.0000        30
+weighted avg     1.0000    1.0000    1.0000        30
+
+
+  --- Nearest-Centroid ---
+  Accuracy:          0.8333
+  Balanced Accuracy: 0.9000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            5           20
+
+              precision    recall  f1-score   support
+
+           0     0.5000    1.0000    0.6667         5
+           1     1.0000    0.8000    0.8889        25
+
+    accuracy                         0.8333        30
+   macro avg     0.7500    0.9000    0.7778        30
+weighted avg     0.9167    0.8333    0.8519        30
+
+
+=================================================================
+  FOLD: Test auf run_concurrency = 12
+=================================================================
+
+  Train-Samples: 120   Test-Samples: 30
+
+  --- Logistic Regression ---
+  Accuracy:          1.0000
+  Balanced Accuracy: 1.0000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            0           25
+
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000         5
+           1     1.0000    1.0000    1.0000        25
+
+    accuracy                         1.0000        30
+   macro avg     1.0000    1.0000    1.0000        30
+weighted avg     1.0000    1.0000    1.0000        30
+
+
+  --- Nearest-Centroid ---
+  Accuracy:          0.8333
+  Balanced Accuracy: 0.9000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            5           20
+
+              precision    recall  f1-score   support
+
+           0     0.5000    1.0000    0.6667         5
+           1     1.0000    0.8000    0.8889        25
+
+    accuracy                         0.8333        30
+   macro avg     0.7500    0.9000    0.7778        30
+weighted avg     0.9167    0.8333    0.8519        30
+
+
+=================================================================
+  FOLD: Test auf run_concurrency = 16
+=================================================================
+
+  Train-Samples: 120   Test-Samples: 30
+
+  --- Logistic Regression ---
+  Accuracy:          1.0000
+  Balanced Accuracy: 1.0000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            0           25
+
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000         5
+           1     1.0000    1.0000    1.0000        25
+
+    accuracy                         1.0000        30
+   macro avg     1.0000    1.0000    1.0000        30
+weighted avg     1.0000    1.0000    1.0000        30
+
+
+  --- Nearest-Centroid ---
+  Accuracy:          0.8333
+  Balanced Accuracy: 0.9000
+
+  Confusion Matrix:
+                 offload=0    offload>0
+    offload=0            5            0
+    offload>0            5           20
+
+              precision    recall  f1-score   support
+
+           0     0.5000    1.0000    0.6667         5
+           1     1.0000    0.8000    0.8889        25
+
+    accuracy                         0.8333        30
+   macro avg     0.7500    0.9000    0.7778        30
+weighted avg     0.9167    0.8333    0.8519        30
+
+
+=================================================================
+  ZUSAMMENFASSUNG — Leave-One-Concurrency-Out
+=================================================================
+
+    Held-out conc    LR Acc   LR BAcc    NC Acc   NC BAcc
+  -------------------------------------------------------
+                2    1.0000    1.0000    0.6667    0.8000
+                4    1.0000    1.0000    0.6333    0.7800
+                8    1.0000    1.0000    0.8333    0.9000
+               12    1.0000    1.0000    0.8333    0.9000
+               16    1.0000    1.0000    0.8333    0.9000
+  -------------------------------------------------------
+             MEAN    1.0000    1.0000    0.7600    0.8560
+              STD    0.0000    0.0000    0.0904    0.0543
+
+  [INFO] Fold-Ergebnisse gespeichert: results/tables/separability/qwen_binary_loco_c2plus.csv
