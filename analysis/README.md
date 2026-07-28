@@ -43,10 +43,6 @@ Verify canonical raw inputs:
 
     bash analysis/verify_checksums.sh
 
-Generate the optional normalized phase-profile figure:
-
-    INCLUDE_FIG2=1 bash analysis/run_all_figures.sh
-
 ## Generated outputs
 
 The pipeline writes generated artifacts beneath:

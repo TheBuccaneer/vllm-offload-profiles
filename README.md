@@ -78,6 +78,7 @@ A successful execution ends with:
 Figures:
 
 - `results/figures/paper/fig1_offload_fits.pdf`
+- `results/figures/paper/fig2_phase_profile.pdf`
 - `results/figures/paper/fig3_profile_robustness.pdf`
 - `results/figures/paper/fig4_control_profiles.pdf`
 
@@ -91,9 +92,6 @@ Tables:
 Paper-output provenance JSON files record the input checksums and the
 Git revision of the analysis code used to generate the outputs.
 
-The optional normalized phase-profile figure can be generated with:
-
-    INCLUDE_FIG2=1 bash analysis/run_all_figures.sh
 
 ## Data integrity
 

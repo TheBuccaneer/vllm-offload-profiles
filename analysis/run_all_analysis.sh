@@ -197,6 +197,10 @@ EXPECTED=(
   results/tables/paper/table_fit_parameters.csv
   results/tables/paper/table_control_ratios.csv
   results/figures/paper/fig1_offload_fits.pdf
+  results/figures/paper/fig2_phase_profile.pdf
+  results/figures/paper/fig2_phase_profile.png
+  results/figures/paper/fig2_phase_profile_data.csv
+  results/figures/paper/fig2_phase_profile_provenance.json
   results/figures/paper/fig3_profile_robustness.pdf
   results/figures/paper/fig4_control_profiles.pdf
 )

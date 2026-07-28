@@ -11,7 +11,6 @@ if [[ ! -d "$REPO_ROOT/data/derived" ||
 fi
 
 PYTHON="${PYTHON:-python3}"
-INCLUDE_FIG2="${INCLUDE_FIG2:-0}"
 
 FIGURE_DIR="$REPO_ROOT/results/figures/paper"
 TABLE_DIR="$REPO_ROOT/results/tables/paper"
@@ -39,10 +38,9 @@ CONTROL_ARGS=(
 "$PYTHON" "$SCRIPT_DIR/figures/build_fig1_offload_fits.py" \
   "${BASE_ARGS[@]}" --output-dir "$FIGURE_DIR"
 
-if [[ "$INCLUDE_FIG2" == "1" ]]; then
-  "$PYTHON" "$SCRIPT_DIR/figures/build_fig2_phase_profile.py" \
-    "${BASE_ARGS[@]}" --output-dir "$FIGURE_DIR"
-fi
+"$PYTHON" "$SCRIPT_DIR/figures/build_fig2_phase_profile.py" \
+  "${BASE_ARGS[@]}" --output-dir "$FIGURE_DIR"
+
 
 "$PYTHON" "$SCRIPT_DIR/figures/build_fig3_profile_robustness.py" \
   "${PROFILE_ARGS[@]}" --output-dir "$FIGURE_DIR"

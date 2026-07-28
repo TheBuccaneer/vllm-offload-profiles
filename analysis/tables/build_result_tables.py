@@ -71,7 +71,12 @@ def make_control_table(cells: pd.DataFrame) -> pd.DataFrame:
                 "loaded_over_normal_itl": float(indexed.loc["gpu_only_loaded", "itl_over_normal"]),
                 "kv_over_normal_ttft": float(indexed.loc["kv_vram_pressure", "ttft_over_normal"]),
                 "kv_over_normal_itl": float(indexed.loc["kv_vram_pressure", "itl_over_normal"]),
-                "offload12_over_normal_itl": float(indexed.loc["cpu_offload12", "itl_over_normal"]),
+                "offload12_over_normal_ttft": float(
+                    indexed.loc["cpu_offload12", "ttft_over_normal"]
+                ),
+                "offload12_over_normal_itl": float(
+                    indexed.loc["cpu_offload12", "itl_over_normal"]
+                ),
                 "kv_over_offload12_itl_percent": float(
                     indexed.loc["kv_vram_pressure", "itl_over_offload12_percent"]
                 ),
@@ -88,9 +93,9 @@ def latex_control_table(frame: pd.DataFrame) -> str:
         r"    \label{tab:control_ratios}",
         r"    \scriptsize",
         r"    \setlength{\tabcolsep}{2.1pt}",
-        r"    \begin{tabular}{lcrrrrrr}",
+        r"    \begin{tabular}{lcrrrrrrr}",
         r"        \toprule",
-        r"        Model & Conc. & Load/base TTFT & Load/base ITL & KV/base TTFT & KV/base ITL & Off12/base ITL & KV/Off12 ITL [\%] \\",
+        r"        Model & Conc. & Load/base TTFT & Load/base ITL & KV/base TTFT & KV/base ITL & Off12/base TTFT & Off12/base ITL & KV/Off12 ITL [\%] \\",
         r"        \midrule",
     ]
     for _, row in frame.iterrows():
@@ -99,6 +104,7 @@ def latex_control_table(frame: pd.DataFrame) -> str:
             f"{MODEL_LABELS[row['model']]} & {int(row['concurrency'])} & "
             f"{row['loaded_over_normal_ttft']:.2f} & {row['loaded_over_normal_itl']:.2f} & "
             f"{row['kv_over_normal_ttft']:.2f} & {row['kv_over_normal_itl']:.2f} & "
+            f"{row['offload12_over_normal_ttft']:.2f} & "
             f"{row['offload12_over_normal_itl']:.2f} & "
             f"{row['kv_over_offload12_itl_percent']:.2f} \\\\"
         )
