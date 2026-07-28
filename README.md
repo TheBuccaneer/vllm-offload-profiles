@@ -1,68 +1,57 @@
 # vLLM Offload Profiles
 
-This repository contains the experimental artifacts for the study:
+Experimental artifacts for the study:
 
 **Phase-Aware Characterization of CPU Model Offloading in vLLM Serving**
 
-The study examines how vLLM's budget-based CPU model-parameter
-offloading affects client-observed phases of streamed LLM responses.
+This repository contains the raw measurements, experiment runners,
+validation code, analysis pipeline, and publication-ready outputs used
+to characterize how vLLM's CPU model-parameter offloading changes
+client-observed serving phases.
 
 ## Study scope
 
-The evaluated setup uses:
+The evaluated setup includes:
 
 - vLLM 0.17.1
 - NVIDIA RTX 3090 with 24 GiB GPU memory
-- bfloat16 precision
-- meta-llama/Llama-3.1-8B-Instruct
-- Qwen/Qwen2.5-7B-Instruct
-- configured CPU-offload budgets from 0 to 16 GiB
+- `bfloat16` model precision
+- `meta-llama/Llama-3.1-8B-Instruct`
+- `Qwen/Qwen2.5-7B-Instruct`
+- configured CPU-offload budgets of `0, 2, 4, 8, 12, 16 GiB`
+- concurrency levels of `1, 2, 4, 8, 12, 16`
 - client-observed TTFT, TPOT, ITL, and E2EL
 
-The repository covers four evaluated measurement blocks:
+The artifact covers four measurement blocks:
 
-1. baseline offload sweep,
+1. baseline CPU-offload sweep,
 2. request-profile robustness,
-3. GPU-only background-load control,
-4. KV/VRAM-pressure control.
+3. generic GPU-only background-load control,
+4. near-boundary KV-cache and VRAM-pressure control.
 
 ## Repository layout
 
-- `experiments/` contains the canonical experiment runners and configurations.
-- `analysis/` contains extraction, validation, fitting, classification, and plotting code.
-- `data/raw/` contains the canonical raw measurement outputs.
-- `data/derived/` contains reproducibly generated datasets.
-- `data/provenance/` documents configurations, checksums, and source information.
-- `results/` contains publication-ready figures, tables, and validation reports.
-- `environment/` documents the hardware and software environment.
-- `paper/` contains publication-related material.
+- `experiments/`: experiment runners and campaign-specific utilities
+- `analysis/`: extraction, validation, fitting, separability, and plotting
+- `data/raw/`: canonical raw measurement outputs
+- `data/derived/`: reproducibly generated run- and request-level datasets
+- `data/provenance/`: SHA-256 manifests and campaign provenance
+- `results/figures/`: generated figures
+- `results/tables/`: generated tables and analysis datasets
+- `results/reports/`: validation and analysis reports
+- `environment/`: analysis dependencies and environment documentation
+- `paper/`: publication-related material
 
-## Reproduction workflow
+See `MANIFEST.md` for the complete mapping between campaigns, source
+data, analysis scripts, and outputs.
 
-The intended analysis path is:
+## Reproduce the analysis
 
-    raw measurements
-        -> validation
-        -> extraction
-        -> aggregation
-        -> fitting and separability analysis
-        -> figures and tables
+Create an isolated Python environment and install the analysis
+dependencies:
 
-Detailed reproduction instructions will be added after the canonical
-files have been imported and independently validated.
-
-## Artifact policy
-
-Only files used by the final study are included.
-
-Exploratory experiments, superseded scripts, temporary archives,
-temporary working notes, and unrelated project material are
-intentionally excluded.
-
-## Citation
-
-Citation metadata is provided in `CITATION.cff`.
-
-## License
-
-Code and data licenses will be added before the public artifact release.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r environment/requirements-analysis.txt

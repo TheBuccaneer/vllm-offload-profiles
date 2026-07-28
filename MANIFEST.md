@@ -1,60 +1,113 @@
 # Artifact Manifest
 
-This document records the public artifacts used by the study.
+This manifest maps each evaluated measurement campaign to its
+canonical raw data, analysis code, and generated outputs.
 
-Each imported file must be assigned to one of the four evaluated
-measurement blocks or to the shared analysis pipeline.
+## 1. Baseline CPU-offload sweep
 
-## Baseline offload sweep
+Design:
 
-- Status: pending import
-- Raw data:
-- Experiment runners:
-- Extraction scripts:
-- Validation reports:
-- Derived datasets:
+- models: Llama-3.1-8B-Instruct and Qwen2.5-7B-Instruct
+- offload budgets: `0, 2, 4, 8, 12, 16 GiB`
+- concurrency: `1, 2, 4, 8, 12, 16`
+- repetitions: 5 per cell
+- request profile: 256 input / 64 output tokens
+- total: 360 runs and 7,200 requests
 
-## Request-profile robustness
+Artifacts:
 
-- Status: pending import
-- Raw data:
-- Experiment runners:
-- Extraction scripts:
-- Validation reports:
-- Derived datasets:
+- raw data: `data/raw/baseline/`
+- runners: `experiments/baseline/`
+- extraction: `analysis/extraction/extract_baseline.py`
+- validation: `analysis/validation/validate_baseline.py`
+- derived data: `data/derived/baseline/`
+- validation report: `results/reports/baseline_validation.txt`
+- separability outputs: `results/tables/separability/`
+- checksums: `data/provenance/baseline_sha256.txt`
 
-## GPU-only background-load control
+## 2. Request-profile robustness
 
-- Status: pending import
-- Raw data:
-- Experiment runners:
-- Calibration records:
-- Validation reports:
-- Derived datasets:
+Design:
 
-## KV/VRAM-pressure control
+- offload budgets: 0 and 12 GiB
+- profiles: `128/32`, `256/64`, and `512/128`
+- concurrency: 4 and 8
+- repetitions: 3 per cell
+- total: 72 runs and 1,440 requests
 
-- Status: pending import
-- Raw data:
-- Experiment runners:
-- Configuration provenance:
-- Validation reports:
-- Derived datasets:
+Artifacts:
 
-## Shared analysis
+- raw data: `data/raw/profile_robustness/`
+- runner: `experiments/profile_robustness/run_client.sh`
+- extraction: `analysis/extraction/extract_baseline.py`
+- validation: `analysis/validation/validate_profile_robustness.py`
+- analysis: `analysis/separability/profile_robustness.py`
+- derived data: `data/derived/profile_robustness/`
+- figures: `results/figures/profile_robustness/`
+- tables: `results/tables/profile_robustness/`
+- reports: `results/reports/profile_robustness_*`
+- checksums: `data/provenance/profile_robustness_sha256.txt`
 
-- Fit generation: pending import
-- Separability analysis: pending import
-- Figure generation: pending import
-- Table generation: pending import
+## 3. Generic GPU-only load control
+
+Design:
+
+- conditions: normal, GPU-only loaded, and 12 GiB CPU offload
+- concurrency: 4 and 8
+- repetitions: 3 per cell
+- total main campaign: 36 runs and 720 requests
+- `gpu-memory-utilization`: 0.86
+
+Artifacts:
+
+- raw data: `data/raw/gpu_load_control/`
+- runners, validation, and analysis:
+  `experiments/gpu_load_control/`
+- figures: `results/figures/gpu_load_control/`
+- tables: `results/tables/gpu_load_control/`
+- reports: `results/reports/gpu_load_control_*`
+- checksums: `data/provenance/gpu_load_control_sha256.txt`
+
+## 4. KV-cache and VRAM-pressure control
+
+Design:
+
+- CPU model offloading: 0 GiB
+- probe profile: 256 input / 64 output tokens
+- probe concurrency: 4 and 8
+- background profile: concurrency 64, 1,024 input / 512 output tokens
+- `gpu-memory-utilization`: 0.75 for Llama and 0.65 for Qwen
+- total: 12 probe runs and 240 probe requests
+
+Artifacts:
+
+- raw data: `data/raw/kv_vram_control/`
+- runners, validation, and analysis:
+  `experiments/kv_vram_control/`
+- summary table:
+  `results/tables/kv_vram_control/kv_vram_control_summary.csv`
+- reports: `results/reports/kv_vram_control_*`
+- checksums: `data/provenance/kv_vram_control_sha256.txt`
+
+## Shared analysis pipeline
+
+- strict evidence loading and fitting:
+  `analysis/common/figure_common.py`
+- paper figures: `analysis/figures/`
+- paper tables: `analysis/tables/`
+- figure entry point: `analysis/run_all_figures.sh`
+- complete entry point: `analysis/run_all_analysis.sh`
+- checksum verification: `analysis/verify_checksums.sh`
+- analysis dependencies:
+  `environment/requirements-analysis.txt`
+
+Publication-ready outputs:
+
+- `results/figures/paper/`
+- `results/tables/paper/`
 
 ## Excluded material
 
-The public artifact excludes:
-
-- superseded experiments,
-- unrelated project branches,
-- temporary archives,
-- internal planning documents,
-- duplicated outputs,
-- obsolete intermediate results.
+The artifact excludes superseded experiments, unrelated project
+branches, temporary archives, duplicated outputs, obsolete
+intermediate results, and planning documents.
