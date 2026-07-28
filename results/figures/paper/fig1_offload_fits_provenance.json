@@ -1,0 +1,22 @@
+{
+  "concurrencies": [
+    4,
+    8
+  ],
+  "git_commit": "3214537b1daa2dbd12f7286bf2383d5bbb455dd0",
+  "inputs": [
+    {
+      "path": "data/derived/baseline/llama/runs_summary.csv",
+      "sha256": "d72c6ff9cc631a2d18304be5b3b9cb499c2928a7fae2f2bf2e2278ddb05153c7"
+    },
+    {
+      "path": "data/derived/baseline/qwen/runs_summary.csv",
+      "sha256": "a8f3af467292f03fb9b8bceb48b223ce4795ae5adb7f97d1bbf64a324dd2830b"
+    }
+  ],
+  "models": [
+    "llama",
+    "qwen"
+  ],
+  "repo_root": "."
+}

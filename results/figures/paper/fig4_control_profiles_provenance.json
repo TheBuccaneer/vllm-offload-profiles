@@ -1,0 +1,60 @@
+{
+  "git_commit": "3214537b1daa2dbd12f7286bf2383d5bbb455dd0",
+  "inputs": [
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc4_run1.json",
+      "sha256": "72ae08bebcc8abc8cb22033ccfe7c7482eeb4d6b020ffa69ab76815eca8cfd17"
+    },
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc4_run2.json",
+      "sha256": "410d12426739a63f1ad998486dfbc5dab286533fe90f944f8ac84387bc160652"
+    },
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc4_run3.json",
+      "sha256": "85a66eabb373cc42f006433a83eae85aedabfe8750685098d4986a6675a4312e"
+    },
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc8_run1.json",
+      "sha256": "198643c4ba1f45eb20d216eb3527619397089f28d6f7c620bd833e8713fc291d"
+    },
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc8_run2.json",
+      "sha256": "8d333e0567a604c912dfbd66c1c5f242cbfa7785c3480b4280006aecdabcc427"
+    },
+    {
+      "path": "data/raw/kv_vram_control/llama/main/gpu_only_loaded/llama_fixd_main_gpu_only_loaded_profile-reference_conc8_run3.json",
+      "sha256": "f722c227f09263858ec10940cde21b82988986132ff1afc13de3f4930a550456"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc4_run1.json",
+      "sha256": "51b15d5dbf89f4fa3f9aef6b0c7c2d315d545e8e7ffcc42784e5173f01f4509a"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc4_run2.json",
+      "sha256": "78d596a9ec77b268bd6541cfedfc820c03cb9ca4c7f691160bef97220722c1df"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc4_run3.json",
+      "sha256": "bd87da82e46314ee89efe99b4e25e58073c0e1ba15590174e03fce6cb11e2469"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc8_run1.json",
+      "sha256": "2f9e15f42598302629d15c417034923e222b9e1bd72b0ccd353f86f3bea8681e"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc8_run2.json",
+      "sha256": "a9e73eed67ab7f4abeb240fe30c81376b3b4a92ecbdcfbd8da02f1efe880a0d5"
+    },
+    {
+      "path": "data/raw/kv_vram_control/qwen/main/gpu_only_loaded/qwen_fixd_main_gpu_only_loaded_profile-reference_conc8_run3.json",
+      "sha256": "e9287850c24a91507bc7d5696092f71d9f5d008529796898dbc6fd45e567a0a9"
+    },
+    {
+      "path": "results/tables/gpu_load_control/fixd_main_summary.csv",
+      "sha256": "57ca877f073c5d0eb03c722ab78fd736bd9181b50c1878f7dfa77de458a6543a"
+    }
+  ],
+  "lines_are_visual_guides": true,
+  "log_y": true,
+  "repo_root": "."
+}

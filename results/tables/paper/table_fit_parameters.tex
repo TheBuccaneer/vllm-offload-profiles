@@ -1,0 +1,17 @@
+\begin{table}[t]
+    \centering
+    \caption{Parameters of the affine and saturating TPOT models. The affine fit uses $0$--$12\,\mathrm{GiB}$; the global linear and saturating fits use all six levels.}
+    \label{tab:fit_results}
+    \scriptsize
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{llrrrrr}
+        \toprule
+        Model & Conc. & Slope [ms/GiB] & $R^2$ affine & $R^2$ global & $G_{\mathrm{sat}}$ [GiB] & $R^2$ saturating \\
+        \midrule
+        Llama & 4 & 114.9 & 0.99997 & 0.96730 & 12.66 & 0.99998 \\
+        Llama & 8 & 115.6 & 0.99997 & 0.96729 & 12.66 & 0.99998 \\
+        Qwen & 4 & 121.8 & 0.99948 & 0.94591 & 11.69 & 0.99983 \\
+        Qwen & 8 & 122.2 & 0.99947 & 0.94608 & 11.69 & 0.99981 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
