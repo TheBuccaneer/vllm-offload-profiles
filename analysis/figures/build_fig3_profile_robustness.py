@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Figure 3: offload12/offload0 robustness across request profiles."""
+"""Build Figure 3: offload12/offload0 robustness across request profiles"""
 from __future__ import annotations
 
 import argparse

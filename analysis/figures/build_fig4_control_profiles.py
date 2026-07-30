@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Figure 4: combined generic-load and KV/VRAM control profiles."""
+"""Build Figure 4: combined generic-load and KV/VRAM control profiles"""
 from __future__ import annotations
 
 import argparse

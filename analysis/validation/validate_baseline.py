@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the complete two-model baseline campaign."""
+"""Validate the complete two-model baseline campaign"""
 
 from __future__ import annotations
 

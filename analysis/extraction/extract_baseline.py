@@ -30,17 +30,16 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Bekannte gültige Werte (für Sanity Checks)
-# ---------------------------------------------------------------------------
+# ------------------
 
 VALID_OFFLOAD_GB    = {0, 2, 4, 8, 12, 16}
 VALID_CONCURRENCIES = {1, 2, 4, 8, 12, 16}
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Run-Level Spaltenreihenfolge
-# ---------------------------------------------------------------------------
-
+# ------------------
 RUN_COLUMNS = [
     "file_path", "file_name", "parent_dir", "source_subdir",
     "experiment_id", "server_config_label", "model_name", "date",
@@ -60,10 +59,8 @@ RUN_COLUMNS = [
     "p50_e2el_ms",    "p95_e2el_ms",      "p99_e2el_ms",
 ]
 
-# ---------------------------------------------------------------------------
-# Request-Level Spaltenreihenfolge
-# ---------------------------------------------------------------------------
-
+# ------------------ Request-Level Spaltenreihenfolge
+# ------------------
 REQ_COLUMNS = [
     "file_path", "file_name", "parent_dir", "source_subdir",
     "experiment_id", "server_config_label", "model_name", "date",
@@ -82,10 +79,9 @@ REQ_COLUMNS = [
     "tail_ratio_p99_over_median",
 ]
 
-# ---------------------------------------------------------------------------
-# Hilfsfunktionen: Metadaten aus Pfad/Dateinamen extrahieren
-# ---------------------------------------------------------------------------
-
+# ------------------
+Hilfsfunktionen: Metadaten aus Pfad/Dateinamen extrahieren
+# ------------------
 def _int_or_none(s: str | None) -> int | None:
     try:
         return int(s)
@@ -115,9 +111,9 @@ def extract_run_id(stem: str) -> int | None:
     return _int_or_none(m.group(1)) if m else None
 
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Scalar-Getter (kein Crash bei fehlenden Feldern)
-# ---------------------------------------------------------------------------
+# ------------------
 
 def _get(data: dict, key: str, default=None):
     v = data.get(key, default)
@@ -140,9 +136,9 @@ def _coerce_float(v, default=None) -> float | None:
         return default
 
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Run-Level Verarbeitung
-# ---------------------------------------------------------------------------
+# -------------------# ------------------
 
 def process_run(json_path: Path) -> dict | None:
     """Liest eine JSON-Datei und gibt ein Run-Level-Dict zurück."""
@@ -232,9 +228,9 @@ def process_run(json_path: Path) -> dict | None:
     return row
 
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Request-Level Verarbeitung
-# ---------------------------------------------------------------------------
+# ------------------
 
 def _itl_stats(itl_list: list) -> dict:
     """Berechnet alle ITL-Statistiken in Millisekunden aus einer Liste (Sekunden)."""
@@ -328,9 +324,9 @@ def process_requests(json_path: Path, run_meta: dict) -> list[dict]:
     return rows
 
 
-# ---------------------------------------------------------------------------
+# ------------------
 # Sanity Checks
-# ---------------------------------------------------------------------------
+# ------------------
 
 def sanity_check_runs(df: pd.DataFrame) -> None:
     print("\n[SANITY CHECK] Run-Level Tabelle")
@@ -396,9 +392,7 @@ def sanity_check_requests(df_runs: pd.DataFrame, df_req: pd.DataFrame) -> None:
         print(f"  [OK]   Request-Zeilenzahl plausibel für alle {len(merged)} Runs")
 
 
-# ---------------------------------------------------------------------------
-# Ausgabe-Vorschau
-# ---------------------------------------------------------------------------
+
 
 def print_head(df: pd.DataFrame, n: int, title: str, cols: list[str]) -> None:
     print(f"\n--- {title}: erste {min(n, len(df))} Zeile(n) ---")
@@ -407,9 +401,6 @@ def print_head(df: pd.DataFrame, n: int, title: str, cols: list[str]) -> None:
     print()
 
 
-# ---------------------------------------------------------------------------
-# Sortierung
-# ---------------------------------------------------------------------------
 
 def sort_df(df: pd.DataFrame, extra_cols: list[str] | None = None) -> pd.DataFrame:
     base = ["offload_gb", "run_concurrency", "run_id"]
@@ -419,9 +410,7 @@ def sort_df(df: pd.DataFrame, extra_cols: list[str] | None = None) -> pd.DataFra
     return df
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -437,10 +426,6 @@ def parse_args() -> argparse.Namespace:
                         help="Speichert die Tabellen zusätzlich als Parquet.")
     return parser.parse_args()
 
-
-# ---------------------------------------------------------------------------
-# main
-# ---------------------------------------------------------------------------
 
 def main() -> None:
     args = parse_args()

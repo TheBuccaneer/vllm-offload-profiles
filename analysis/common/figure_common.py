@@ -2,7 +2,7 @@
 """Shared strict loaders and helpers for the result figures.
 
 The module intentionally fails on incomplete or ambiguous evidence instead of
-silently plotting a partial matrix.
+silently plotting a partial matrix
 """
 from __future__ import annotations
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Figure 2: normalized baseline TTFT and ITL profiles."""
+"""Build Figure 2: normalized baseline TTFT and ITL profiles"""
 from __future__ import annotations
 
 import argparse

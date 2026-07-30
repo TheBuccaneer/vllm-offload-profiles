@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the two result tables as CSV and LaTeX from authoritative evidence."""
+"""Build the two result tables as CSV and LaTeX from authoritative evidence"""
 from __future__ import annotations
 
 import argparse
