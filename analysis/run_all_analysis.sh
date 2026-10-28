@@ -127,6 +127,16 @@ echo "[7/11] Run baseline separability analyses"
   | tee results/reports/llama_multiclass_loco_c2plus.txt
 
 echo
+echo
+echo "Export Llama multiclass confusion matrix"
+"$PYTHON" analysis/separability/export_llama_multiclass_confusion.py
+
+echo
+echo "Count eligible decoder parameters"
+"$PYTHON" analysis/validation/count_eligible_decoder_parameters.py \
+  --json-output results/reports/eligible_decoder_parameter_volume.json \
+  --csv-output results/reports/eligible_decoder_parameter_volume.csv
+
 echo "[8/11] Validate and analyze generic GPU-load control"
 "$PYTHON" experiments/gpu_load_control/validate_fixd.py \
   data/raw/gpu_load_control \
