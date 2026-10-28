@@ -100,7 +100,7 @@ def main() -> int:
         axis.grid(axis="y", linewidth=0.4, alpha=0.35)
         if args.log_y:
             axis.set_yscale("log")
-    axes[0].set_ylabel("Ratio to 0 GiB baseline")
+    axes[0].set_ylabel("Ratio to 0 GiB reference")
     legend_handles = [
         Line2D([], [], marker="o", linestyle="none", color="black", label="TTFT"),
         Line2D([], [], marker="s", linestyle="none", color="black", label="ITL"),

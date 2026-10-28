@@ -1,0 +1,53 @@
+{
+  "calculation": "Analytical count of decoder-layer parameters eligible for UVA offloading; not measured traffic",
+  "implementation": "vLLM v0.17.1, tensor parallel size 1, unquantized bfloat16",
+  "excluded": "Token embeddings, final model norm, and output projection (lm_head)",
+  "results": [
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_type": "llama",
+      "num_hidden_layers": 32,
+      "parameters_per_decoder_layer": 218112000,
+      "eligible_decoder_parameters": 6979584000,
+      "bytes_per_parameter": 2,
+      "eligible_decoder_bytes": 13959168000,
+      "eligible_decoder_gib": 13.00048828125,
+      "not_uva_eligible_parameters": 1050677248,
+      "not_uva_eligible_gib": 1.9570388793945312,
+      "model_parameters_total": 8030261248,
+      "model_parameter_gib": 14.957527160644531,
+      "per_layer_breakdown": {
+        "attention_qkv_weights": 25165824,
+        "attention_o_weights": 16777216,
+        "mlp_gate_up_down_weights": 176160768,
+        "input_and_post_attention_norm": 8192,
+        "attention_qkv_biases": 0,
+        "attention_o_bias": 0,
+        "mlp_biases": 0
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "model_type": "qwen2",
+      "num_hidden_layers": 28,
+      "parameters_per_decoder_layer": 233057792,
+      "eligible_decoder_parameters": 6525618176,
+      "bytes_per_parameter": 2,
+      "eligible_decoder_bytes": 13051236352,
+      "eligible_decoder_gib": 12.154911041259766,
+      "not_uva_eligible_parameters": 1089998336,
+      "not_uva_eligible_gib": 2.030280113220215,
+      "model_parameters_total": 7615616512,
+      "model_parameter_gib": 14.18519115447998,
+      "per_layer_breakdown": {
+        "attention_qkv_weights": 16515072,
+        "attention_o_weights": 12845056,
+        "mlp_gate_up_down_weights": 203685888,
+        "input_and_post_attention_norm": 7168,
+        "attention_qkv_biases": 4608,
+        "attention_o_bias": 0,
+        "mlp_biases": 0
+      }
+    }
+  ]
+}

@@ -32,9 +32,9 @@ CONDITIONS = (
     "cpu_offload12",
 )
 CONDITION_LABELS = {
-    "gpu_only_normal": "Normal",
-    "gpu_only_loaded": "GPU-only load",
-    "kv_vram_pressure": "KV/VRAM",
+    "gpu_only_normal": "Reference",
+    "gpu_only_loaded": "GPU load",
+    "kv_vram_pressure": "Memory pressure",
     "cpu_offload12": "Offload 12 GiB",
 }
 
@@ -79,9 +79,9 @@ def main() -> int:
     cells = control_cells(fixd, d2)
 
     condition_labels = {
-        "gpu_only_normal": "Normal",
-        "gpu_only_loaded": "GPU-only\nload",
-        "kv_vram_pressure": "KV/VRAM\npressure",
+        "gpu_only_normal": "Reference",
+        "gpu_only_loaded": "GPU\nload",
+        "kv_vram_pressure": "Memory\npressure",
         "cpu_offload12": "Offload\n12 GiB",
     }
 
@@ -158,7 +158,7 @@ def main() -> int:
 
             if column == 0:
                 axis.set_ylabel(
-                    f"{metric} / GPU-only baseline"
+                    f"{metric} / matched reference"
                 )
 
             axis.set_xticks(x_values)

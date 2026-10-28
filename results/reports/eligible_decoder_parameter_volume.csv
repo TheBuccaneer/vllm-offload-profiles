@@ -1,0 +1,3 @@
+model_id,num_hidden_layers,parameters_per_decoder_layer,eligible_decoder_parameters,bytes_per_parameter,eligible_decoder_bytes,eligible_decoder_gib,not_uva_eligible_parameters,not_uva_eligible_gib,model_parameters_total,model_parameter_gib
+meta-llama/Llama-3.1-8B-Instruct,32,218112000,6979584000,2,13959168000,13.00048828125,1050677248,1.9570388793945312,8030261248,14.957527160644531
+Qwen/Qwen2.5-7B-Instruct,28,233057792,6525618176,2,13051236352,12.154911041259766,1089998336,2.030280113220215,7615616512,14.18519115447998

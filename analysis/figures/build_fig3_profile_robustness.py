@@ -67,7 +67,7 @@ def main() -> int:
         axis.set_xlabel("Nominal request profile")
         axis.set_xticks(x_values, PROFILE_ORDER)
         axis.grid(axis="y", linewidth=0.4, alpha=0.35)
-    axes[0].set_ylabel("12 GiB offload / 0 GiB offload")
+    axes[0].set_ylabel("12 GiB offload / 0 GiB reference")
     legend_handles = [
         Line2D([], [], marker="o", linestyle="none", color="black", label="TPOT"),
         Line2D([], [], marker="s", linestyle="none", color="black", label="ITL"),
